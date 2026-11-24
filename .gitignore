@@ -1,0 +1,20 @@
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Dependencias (si algún día se añaden)
+node_modules/
+
+# Archivos temporales
+*.log
+*.tmp
+
+# Notas personales / borradores
+notas.txt
+borradores/

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>31 Días, 31 Recuerdos — Calendario de Adviento</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="contenedor">
+    <header class="header">
+      <h1>31 Días, 31 Recuerdos</h1>
+      <p>Un pedacito de nuestro pasado para cada día de diciembre. Abre solo la cajita de hoy.</p>
+      <div class="estado-fecha" id="estado-fecha">
+        Día <span id="dia-actual">--</span> de 31
+      </div>
+    </header>
+
+    <div class="calendario-grid" id="calendario">
+      <!-- Las cajas se generan con JavaScript -->
+    </div>
+  </div>
+
+  <!-- Modal de recuerdo abierto -->
+  <div class="modal-fondo" id="modal-fondo">
+    <div class="modal">
+      <button class="cerrar-modal" id="cerrar-modal" aria-label="Cerrar">×</button>
+      <div class="contenido-modal" id="contenido-modal">
+        <!-- Se inyecta con JS -->
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>Calendario de Adviento — Hecho con cariño para abrir el 1 de diciembre de 2026.</p>
+    <p style="margin-top:8px; font-size:0.8rem;">Edita los recuerdos en <a href="admin.html" style="color:var(--polvo); text-decoration:underline;">el panel de administración</a>.</p>
+  </footer>
+
+  <script src="datos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

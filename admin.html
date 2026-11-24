@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — 31 Días, 31 Recuerdos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="admin-contenedor">
+    <header class="admin-header">
+      <h1>Panel de Administración</h1>
+      <div style="display:flex; gap:8px; align-items:center;">
+        <span id="indicador-datos" style="font-size:0.85rem; color:#7a6e60; background:rgba(201,168,143,0.15); padding:4px 10px; border-radius:4px;">Datos locales</span>
+      </div>
+    </header>
+
+    <div id="mensaje-area"></div>
+
+    <div class="admin-grid" id="admin-grid">
+      <!-- Tarjetas generadas por JS -->
+    </div>
+
+    <div class="acciones-globales">
+      <button class="btn btn-secundario" id="btn-exportar">Exportar JSON</button>
+      <button class="btn btn-secundario" id="btn-importar">Importar JSON</button>
+      <button class="btn btn-principal" id="btn-guardar">Guardar cambios</button>
+      <input type="file" id="input-importar" accept=".json" style="display:none;">
+    </div>
+
+    <div style="margin-top:32px; padding-top:24px; border-top:1px solid var(--borde-suave); text-align:center;">
+      <p style="font-size:0.85rem; color:#7a6e60;">
+        <strong>Nota:</strong> Los cambios se guardan en el navegador (localStorage).<br>
+        Para publicar en Netlify, exporta el JSON y reemplaza <code>datos.js</code> antes de subir.
+      </p>
+      <p style="margin-top:8px; font-size:0.85rem; color:#7a6e60;">
+        Para conectar con Google Sheets, sigue los pasos del <code>README.md</code>.
+      </p>
+    </div>
+  </div>
+
+  <script src="datos.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

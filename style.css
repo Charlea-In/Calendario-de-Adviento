@@ -1,0 +1,564 @@
+/* ============================================================
+   Calendario de Adviento — 31 Días, 31 Recuerdos
+   Diseño deliberado: álbum de recortes, papel kraft, tinta.
+   Sin clichés de IA. Código escrito a mano.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --papel: #FAF6F0;
+  --tinta: #2E2A23;
+  --polvo: #C9A88F;
+  --hoja: #8FA38B;
+  --brazo: #D98A6A;
+  --sombra: rgba(46, 42, 35, 0.18);
+  --borde-suave: rgba(201, 168, 143, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--papel);
+  color: var(--tinta);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Tipografía deliberada */
+h1, h2, h3, .fecha-dia, .titulo-caja {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+p, label, input, button, .descripcion, .nota-fisica {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ===== Layout principal ===== */
+.contenedor {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid var(--borde-suave);
+}
+
+.header h1 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  color: var(--tinta);
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+
+.header p {
+  font-size: 1.125rem;
+  color: #5a544a;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.estado-fecha {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 18px;
+  background: var(--tinta);
+  color: var(--papel);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+/* ===== Grid del calendario ===== */
+.calendario-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 900px) {
+  .calendario-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .calendario-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+}
+
+/* ===== Caja del calendario ===== */
+.caja {
+  aspect-ratio: 1;
+  background: #fff;
+  border: 2px solid var(--borde-suave);
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+
+.caja:hover {
+  transform: translateY(-4px);
+  border-color: var(--polvo);
+  box-shadow: 0 8px 24px var(--sombra);
+}
+
+/* Número del día */
+.numero-dia {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--tinta);
+  z-index: 2;
+}
+
+/* Etiqueta de objeto físico */
+.objeto-fisico {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #7a6e60;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  border: 1px solid var(--borde-suave);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ===== Estados ===== */
+.caja.bloqueada {
+  opacity: 0.55;
+  cursor: not-allowed;
+  filter: grayscale(0.4);
+}
+
+.caja.bloqueada .numero-dia {
+  color: #9a8f82;
+}
+
+.caja.abierta {
+  background: var(--hoja);
+  border-color: var(--hoja);
+  color: #fff;
+}
+
+.caja.abierta .numero-dia {
+  color: #fff;
+}
+
+.caja.abierta .objeto-fisico {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #eef2ee;
+}
+
+.caja.bloqueada:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--borde-suave);
+}
+
+/* Candado para futuros */
+.candado {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 20px;
+  height: 20px;
+  background: var(--tinta);
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 3;
+}
+
+.caja.bloqueada .candado {
+  opacity: 1;
+}
+
+.candado::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 7px;
+  width: 6px;
+  height: 6px;
+  background: var(--tinta);
+  border-radius: 50%;
+}
+
+/* Indicador de dulce */
+.indicador-dulce {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 10px;
+  height: 10px;
+  background: var(--brazo);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #fff;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.caja .indicador-dulce {
+  opacity: 0.7;
+}
+
+/* ===== Panel de recuerdo abierto (modal) ===== */
+.modal-fondo {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(46, 42, 35, 0.55);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  padding: 40px 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-fondo.activo {
+  display: flex;
+}
+
+.modal {
+  background: var(--papel);
+  border: 2px solid var(--borde-suave);
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 640px;
+  width: 100%;
+  position: relative;
+  animation: aparecerModal 0.4s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@keyframes aparecerModal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cerrar-modal {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #7a6e60;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.cerrar-modal:hover {
+  color: var(--tinta);
+}
+
+.contenido-modal {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 640px) {
+  .contenido-modal {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.imagen-recuerdo {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid var(--borde-suave);
+  object-fit: cover;
+  height: 260px;
+}
+
+.placeholder-imagen {
+  width: 100%;
+  height: 260px;
+  border-radius: 10px;
+  border: 2px dashed var(--borde-suave);
+  background: #f1e9dc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9a8f82;
+  font-style: italic;
+}
+
+.texto-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.titulo-modal {
+  font-size: 1.75rem;
+  color: var(--tinta);
+  margin-bottom: 4px;
+}
+
+.dia-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--brazo);
+  color: #fff;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+
+.descripcion-modal {
+  font-size: 1.05rem;
+  color: #5a544a;
+  line-height: 1.7;
+}
+
+.objeto-modal {
+  font-weight: 600;
+  color: var(--tinta);
+  font-size: 0.95rem;
+  margin-top: 8px;
+}
+
+.nota-fisica-modal {
+  font-size: 0.85rem;
+  color: #7a6e60;
+  font-style: italic;
+  padding-top: 12px;
+  border-top: 1px solid var(--borde-suave);
+}
+
+.dulce-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(217, 138, 106, 0.12);
+  color: var(--brazo);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.dulce-badge::before {
+  content: '🍫';
+  font-size: 1rem;
+}
+
+/* ===== Botones ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-principal {
+  background: var(--tinta);
+  color: var(--papel);
+}
+
+.btn-principal:hover {
+  background: #1a1713;
+  transform: translateY(-1px);
+}
+
+.btn-secundario {
+  background: transparent;
+  color: var(--tinta);
+  border: 2px solid var(--borde-suave);
+}
+
+.btn-secundario:hover {
+  border-color: var(--tinta);
+  background: rgba(46, 42, 35, 0.05);
+}
+
+.btn-acecha {
+  background: var(--brazo);
+  color: #fff;
+}
+
+.btn-acecha:hover {
+  background: #c47253;
+}
+
+/* ===== Admin ===== */
+.admin-contenedor {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--borde-suave);
+}
+
+.admin-header h1 {
+  font-size: 1.75rem;
+  color: var(--tinta);
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.tarjeta-admin {
+  background: #fff;
+  border: 2px solid var(--borde-suave);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.numero-admin {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--tinta);
+}
+
+.input-edit {
+  width: 100%;
+  padding: 8px 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  border: 1px solid var(--borde-suave);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.input-edit:focus {
+  outline: none;
+  border-color: var(--polvo);
+}
+
+.label-edit {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #7a6e60;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 2px;
+}
+
+.checkbox-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #5a544a;
+}
+
+.acciones-admin {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--borde-suave);
+}
+
+.acciones-globales {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+/* ===== Footer ===== */
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: #7a6e60;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--borde-suave);
+}
+
+/* Utilidades */
+.oculto {
+  display: none !important;
+}
+
+.mensaje {
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+.mensaje-exito {
+  background: rgba(143, 163, 139, 0.15);
+  color: #4d624c;
+  border: 1px solid rgba(143, 163, 139, 0.35);
+}
+
+.mensaje-error {
+  background: rgba(217, 138, 106, 0.15);
+  color: #8c4d34;
+  border: 1px solid rgba(217, 138, 106, 0.35);
+}

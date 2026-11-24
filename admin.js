@@ -51,8 +51,9 @@ function renderAdmin() {
     const labelDesc = document.createElement('div');
     labelDesc.className = 'label-edit';
     labelDesc.textContent = 'Descripción';
-    const inputDesc = document.createElement('input');
+    const inputDesc = document.createElement('textarea');
     inputDesc.className = 'input-edit';
+    inputDesc.rows = 3;
     inputDesc.value = recuerdo.descripcion;
     inputDesc.dataset.campo = 'descripcion';
     inputDesc.dataset.dia = recuerdo.dia;

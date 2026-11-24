@@ -24,6 +24,12 @@ calendario-adviento/
 3. Los cambios se guardan temporalmente en tu navegador (`localStorage`).
 4. Usa **Exportar JSON** para descargar `datos_adviento.json` y reemplazar el contenido de `datos.js` antes de subir a Netlify.
 
+### Extras de la interfaz
+
+- **Tema claro/oscuro:** botón de sol/luna arriba a la derecha; se recuerda tu elección.
+- **Vista previa:** abre `index.html?preview` para desbloquear las 31 cajitas antes de diciembre.
+- **3D:** las cajitas se inclinan con el puntero y la tapa gira al abrirlas. Respeta `prefers-reduced-motion`.
+
 ## Desplegar en Netlify
 
 1. Sube esta carpeta a un repositorio de GitHub.

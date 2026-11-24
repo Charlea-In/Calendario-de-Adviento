@@ -3,29 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>31 Días, 31 Recuerdos — Calendario de Adviento</title>
+  <meta name="theme-color" content="#F7ECDA">
+  <meta name="description" content="Calendario de adviento de 31 días con recuerdos: abre una cajita cada día de diciembre y descubre el objeto y la historia que hay detrás.">
+  <title>31 días, 31 recuerdos — Calendario de Adviento</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="contenedor">
+  <div class="nieve" id="nieve" aria-hidden="true"></div>
+
+  <main class="contenedor">
     <header class="header">
-      <h1>31 Días, 31 Recuerdos</h1>
-      <p>Un pedacito de nuestro pasado para cada día de diciembre. Abre solo la cajita de hoy.</p>
-      <div class="estado-fecha" id="estado-fecha">
+      <button class="btn-tema" id="btn-tema" type="button" aria-label="Cambiar entre tema claro y oscuro" aria-pressed="false">
+        <svg class="icono-sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+        </svg>
+        <svg class="icono-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+        </svg>
+      </button>
+
+      <div class="adorno" aria-hidden="true"><span></span><i></i><span></span></div>
+
+      <p class="kicker">Calendario de adviento, diciembre 2026</p>
+      <h1>31 días, <em>31 recuerdos</em></h1>
+      <p class="subtitulo">Abre una cajita cada día. Dentro te espera un objeto, un instante y una historia que compartimos.</p>
+
+      <div class="estado-fecha" id="estado-fecha" role="status" aria-live="polite">
         Día <span id="dia-actual">--</span> de 31
+      </div>
+
+      <div class="progreso-wrap">
+        <div class="progreso" role="progressbar" aria-label="Cajitas abiertas" aria-valuemin="0" aria-valuemax="31" aria-valuenow="0" id="progreso">
+          <span id="progreso-barra"></span>
+        </div>
+        <p class="progreso-texto" id="progreso-texto">0 de 31 cajitas abiertas</p>
       </div>
     </header>
 
     <div class="calendario-grid" id="calendario">
       <!-- Las cajas se generan con JavaScript -->
     </div>
-  </div>
+  </main>
 
   <!-- Modal de recuerdo abierto -->
-  <div class="modal-fondo" id="modal-fondo">
+  <div class="modal-fondo" id="modal-fondo" role="dialog" aria-modal="true" aria-labelledby="titulo-modal">
     <div class="modal">
-      <button class="cerrar-modal" id="cerrar-modal" aria-label="Cerrar">×</button>
+      <button class="cerrar-modal" id="cerrar-modal" type="button" aria-label="Cerrar recuerdo">×</button>
       <div class="contenido-modal" id="contenido-modal">
         <!-- Se inyecta con JS -->
       </div>
@@ -33,8 +61,8 @@
   </div>
 
   <footer class="footer">
-    <p>Calendario de Adviento — Hecho con cariño para abrir el 1 de diciembre de 2026.</p>
-    <p style="margin-top:8px; font-size:0.8rem;">Edita los recuerdos en <a href="admin.html" style="color:var(--polvo); text-decoration:underline;">el panel de administración</a>.</p>
+    <p>Hecho con <span class="corazon">cariño</span> para abrir el 1 de diciembre de 2026.</p>
+    <p style="margin-top:6px;">Edita los recuerdos en <a href="admin.html">el panel de administración</a>.</p>
   </footer>
 
   <script src="datos.js"></script>

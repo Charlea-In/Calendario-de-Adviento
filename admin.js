@@ -125,10 +125,10 @@ function renderAdmin() {
   });
 }
 
-// Guardar en localStorage (simulado) y notificar
+// Guardar en localStorage (borrador local)
 btnGuardar.addEventListener('click', () => {
   localStorage.setItem('adviento_datos_editables', JSON.stringify(datosEditables));
-  mostrarMensaje('Cambios guardados en el navegador. Exporta el JSON para usarlos en producción.', 'exito');
+  mostrarMensaje('Borrador guardado en este navegador. Para publicarlo, usa “Copiar para datos.js”.', 'exito');
 });
 
 // Exportar JSON descargable
@@ -140,8 +140,32 @@ btnExportar.addEventListener('click', () => {
   a.download = 'datos_adviento.json';
   a.click();
   URL.revokeObjectURL(url);
-  mostrarMensaje('JSON exportado. Reemplaza el archivo datos.js con este contenido antes de subir a Netlify.', 'exito');
+  mostrarMensaje('JSON exportado. Copia su contenido en datos.js antes de hacer commit y push.', 'exito');
 });
+
+// Copiar el contenido listo para pegar en datos.js
+const btnCopiar = document.getElementById('btn-copiar');
+if (btnCopiar) {
+  btnCopiar.addEventListener('click', async () => {
+    const texto = 'window.datosCalendario = ' + JSON.stringify(datosEditables, null, 2) + ';\n';
+    try {
+      await navigator.clipboard.writeText(texto);
+      mostrarMensaje('Copiado. Ahora abre datos.js, selecciona todo (Ctrl+A) y pega (Ctrl+V).', 'exito');
+    } catch (e) {
+      const ta = document.createElement('textarea');
+      ta.value = texto;
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        mostrarMensaje('Copiado. Ahora abre datos.js, selecciona todo (Ctrl+A) y pega (Ctrl+V).', 'exito');
+      } catch (e2) {
+        mostrarMensaje('No se pudo copiar automáticamente. Usa “Exportar JSON”.', 'error');
+      }
+      ta.remove();
+    }
+  });
+}
 
 // Importar JSON
 btnImportar.addEventListener('click', () => {

@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#F7ECDA">
+  <meta name="theme-color" content="#150E13">
   <meta name="description" content="Panel de administración del calendario de adviento: edita títulos, objetos, descripciones y fotos de los 31 recuerdos.">
   <title>Panel de administración — 31 días, 31 recuerdos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
 
@@ -29,21 +29,37 @@
     </div>
 
     <div class="acciones-globales">
+      <button class="btn btn-secundario" id="btn-guardar" type="button">Guardar borrador</button>
       <button class="btn btn-secundario" id="btn-importar" type="button">Importar JSON</button>
       <button class="btn btn-secundario" id="btn-exportar" type="button">Exportar JSON</button>
-      <button class="btn btn-principal" id="btn-guardar" type="button">Guardar cambios</button>
+      <button class="btn btn-principal" id="btn-copiar" type="button">Copiar para datos.js</button>
       <input type="file" id="input-importar" accept=".json" hidden>
     </div>
 
-    <div class="aviso-admin">
-      <strong>Cómo funciona:</strong> edita los campos y pulsa <em>Guardar cambios</em> — se guardan en este navegador.
-      Para publicar en Netlify, usa <em>Exportar JSON</em>, reemplaza el contenido de <code>datos.js</code> y haz
-      <code>git add . &amp;&amp; git commit -m "Actualizo recuerdos" &amp;&amp; git push</code>.
-      Para revisar todas las cajitas antes de diciembre, abre <code>index.html?preview</code>.
-    </div>
+    <section class="aviso-admin">
+      <h2>Cómo actualizar y publicar los recuerdos</h2>
+      <ol>
+        <li>Edita los campos de la cajita que quieras cambiar: título, objeto, descripción, foto o dulce.</li>
+        <li>Pulsa <strong>Guardar borrador</strong> para no perder los cambios en este navegador.</li>
+        <li>Pulsa <strong>Copiar para datos.js</strong>. Se copia todo el contenido listo para pegar.</li>
+        <li>Abre el archivo <code>datos.js</code> en tu editor, selecciona todo (<code>Ctrl+A</code>) y pega lo copiado (<code>Ctrl+V</code>). Guarda.</li>
+        <li>Publica en GitHub con un <strong>commit y push</strong> (ver abajo).</li>
+        <li>GitHub Pages se actualiza solo en aproximadamente 1 minuto.</li>
+      </ol>
+
+      <p style="margin-top:16px;"><strong>Opción con IA (más fácil):</strong> dile a OpenCode algo como <em>“Actualiza datos.js con estos recuerdos y haz commit y push”</em>, y se encarga de todo.</p>
+
+      <p style="margin-top:16px;"><strong>Opción manual</strong>, en PowerShell dentro de la carpeta del proyecto:</p>
+      <code class="bloque-cmd">cd "C:\Users\carlo\OneDrive\Documentos\Calendario de Adviento"
+git add .
+git commit -m "Actualizo recuerdos"
+git push</code>
+
+      <p style="margin-top:16px;">Para revisar todas las cajitas antes de diciembre, abre <code>index.html?preview</code>.</p>
+    </section>
   </main>
 
-  <script src="datos.js?v=2"></script>
-  <script src="admin.js?v=2"></script>
+  <script src="datos.js?v=5"></script>
+  <script src="admin.js?v=5"></script>
 </body>
 </html>

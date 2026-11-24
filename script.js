@@ -1,8 +1,8 @@
 /**
  * 31 días, 31 recuerdos — lógica del calendario
- * - Cajitas 3D con tapa que gira al abrir
+ * - Cajitas 3D con tapa que se eleva al abrir
  * - Inclinación con el puntero (desktop)
- * - Tema claro/oscuro y progreso guardados en localStorage
+ * - Progreso guardado en localStorage
  * - Modo ?preview para revisar todas las cajitas antes de diciembre
  */
 
@@ -18,32 +18,11 @@ const contenidoModal = document.getElementById('contenido-modal');
 const progresoEl = document.getElementById('progreso');
 const progresoBarra = document.getElementById('progreso-barra');
 const progresoTexto = document.getElementById('progreso-texto');
-const btnTema = document.getElementById('btn-tema');
 const nieveEl = document.getElementById('nieve');
 
 const reducido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const puedeTilt = window.matchMedia('(hover: hover) and (pointer: fine)').matches && !reducido;
 if (reducido) document.body.classList.add('sin-3d');
-
-/* ============ TEMA ============ */
-const CLAVE_TEMA = 'adviento_tema';
-function aplicarTema(tema) {
-  if (tema === 'oscuro') document.documentElement.dataset.tema = 'oscuro';
-  else delete document.documentElement.dataset.tema;
-  btnTema.setAttribute('aria-pressed', String(tema === 'oscuro'));
-  try { localStorage.setItem(CLAVE_TEMA, tema); } catch (e) {}
-}
-let temaInicial = 'claro';
-let temaGuardado = null;
-try { temaGuardado = localStorage.getItem(CLAVE_TEMA); } catch (e) {}
-if (temaGuardado) temaInicial = temaGuardado;
-else if (window.matchMedia('(prefers-color-scheme: dark)').matches) temaInicial = 'oscuro';
-aplicarTema(temaInicial);
-
-btnTema.addEventListener('click', () => {
-  const actual = document.documentElement.dataset.tema === 'oscuro' ? 'oscuro' : 'claro';
-  aplicarTema(actual === 'oscuro' ? 'claro' : 'oscuro');
-});
 
 /* ============ NIEVE ============ */
 function crearNieve() {
@@ -111,9 +90,10 @@ function crearCaja(recuerdo) {
   caja.type = 'button';
   caja.className = 'caja' + (estaAbierta ? ' abierta' : '') + (bloqueada ? ' bloqueada' : '');
   caja.dataset.dia = recuerdo.dia;
+  // El nombre accesible no revela el contenido: todo es sorpresa.
   caja.setAttribute('aria-label', bloqueada
-    ? `Día ${recuerdo.dia}, ${recuerdo.objetoFisico}. Aún bloqueada hasta su fecha.`
-    : `Día ${recuerdo.dia}, ${recuerdo.objetoFisico}. Abrir la cajita.`);
+    ? `Cajita del día ${recuerdo.dia}, aún bloqueada`
+    : `Abrir la cajita del día ${recuerdo.dia}`);
   if (bloqueada) caja.setAttribute('aria-disabled', 'true');
   else caja.setAttribute('aria-expanded', String(estaAbierta));
 
@@ -125,6 +105,7 @@ function crearCaja(recuerdo) {
   const brillo = document.createElement('span');
   brillo.className = 'brillo-interior';
   brillo.textContent = 'recuerdo';
+  brillo.setAttribute('aria-hidden', 'true');
   interior.appendChild(brillo);
 
   const tapa = document.createElement('div');
@@ -136,23 +117,11 @@ function crearCaja(recuerdo) {
   numero.className = 'numero-dia';
   numero.textContent = recuerdo.dia;
 
-  const objeto = document.createElement('span');
-  objeto.className = 'objeto-fisico';
-  objeto.textContent = recuerdo.objetoFisico;
-
   cara.appendChild(numero);
-  cara.appendChild(objeto);
   tapa.appendChild(cara);
 
   cuerpo.appendChild(interior);
   cuerpo.appendChild(tapa);
-
-  if (recuerdo.tieneDulce) {
-    const sello = document.createElement('span');
-    sello.className = 'sello';
-    sello.title = 'Contiene un detalle dulce';
-    cuerpo.appendChild(sello);
-  }
 
   if (bloqueada) {
     const candado = document.createElement('span');

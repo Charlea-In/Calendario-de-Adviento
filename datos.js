@@ -3,78 +3,78 @@ window.datosCalendario = {
     "anio": 2026,
     "mes": 12,
     "totalDias": 31,
-    "titulo": "31 Días, 31 Recuerdos",
+    "titulo": "31 días, 31 recuerdos",
     "subtitulo": "Un pedacito de nuestro pasado para cada día de diciembre"
   },
   "recuerdos": [
     {
       "dia": 1,
       "titulo": "Bienvenida y nuestra primera salida al cine",
-      "objetoFisico": "Tickets de cine + mensaje de bienvenida",
-      "descripcion": "Día 1: abrimos con los tickets de nuestra primera salida al cine. Ese inicio donde todo comenzó.",
+      "objetoFisico": "Tickets de cine",
+      "descripcion": "Abrimos con nuestra primera salida al cine: ese inicio donde todo comenzó.",
       "foto": "recuerdos/fotos/dia1.jpg",
-      "tieneDulce": false,
-      "notaFisica": "Guarda los tickets en el sobre."
+      "tieneDulce": true,
+      "notaFisica": "¡Tú decides la película!"
     },
     {
       "dia": 2,
       "titulo": "Un dulce segundo día",
-      "objetoFisico": "Un chocolate y un pequeño detalle",
-      "descripcion": "Día 2: un chocolate para endulzar el recuerdo y seguir abriendo cajitas.",
+      "objetoFisico": "La bebida favorita de Jacky",
+      "descripcion": "Una de las primeras cosas que conocí de ti fue tu gusto por el té frío.",
       "foto": "recuerdos/fotos/dia2.jpg",
       "tieneDulce": true,
-      "notaFisica": "No te lo comas todo de una vez."
+      "notaFisica": "Lo puedes encontrar en la refri."
     },
     {
       "dia": 3,
       "titulo": "Nuestra primera foto juntos",
       "objetoFisico": "Foto impresa",
-      "descripcion": "Esa primera foto donde nos vimos por primera vez. Una imagen que vale más que mil palabras.",
+      "descripcion": "Esa foto en la que nos vimos por primera vez. Una imagen que vale más que mil palabras.",
       "foto": "recuerdos/fotos/dia3.jpg",
       "tieneDulce": false,
       "notaFisica": "Pégala en el espejo si quieres."
     },
     {
       "dia": 4,
-      "titulo": "El boleto del viaje",
-      "objetoFisico": "Boleto de bus o metro",
-      "descripcion": "Aquel trayecto que hicimos juntos, mirando por la ventana y hablando sin parar.",
+      "titulo": "Nuestro primer viaje juntos",
+      "objetoFisico": "¿Lo recuerdas?",
+      "descripcion": "Aquel trayecto que hicimos juntos: una salida inolvidable, sobre todo por lo que había pasado días atrás.",
       "foto": "recuerdos/fotos/dia4.jpg",
       "tieneDulce": false,
-      "notaFisica": "Cada boleto guarda una ruta."
+      "notaFisica": "El primero de muchos viajes."
     },
     {
       "dia": 5,
-      "titulo": "La servilleta de aquella tarde",
-      "objetoFisico": "Servilleta con frase o dibujo",
-      "descripcion": "Una servilleta donde escribimos algo que no queríamos olvidar.",
+      "titulo": "¿Y si pasamos a un Starbucks?",
+      "objetoFisico": "Una bebida que también trae recuerdos",
+      "descripcion": "Una de las primeras cosas de las que me di cuenta es que amas las bebidas de Starbucks.",
       "foto": "recuerdos/fotos/dia5.jpg",
-      "tieneDulce": false,
-      "notaFisica": "Los papeles más simples a veces dicen más."
+      "tieneDulce": true,
+      "notaFisica": "Elige el que quieras…"
     },
     {
       "dia": 6,
-      "titulo": "El sabor compartido",
-      "objetoFisico": "Caramelo de un sabor específico",
-      "descripcion": "Ese dulce que compartimos en algún lugar especial y que todavía recordamos.",
+      "titulo": "Trivia",
+      "objetoFisico": "Sorpresa (después de responder)",
+      "descripcion": "Este día no hay objeto ni recuerdo específico, pero podrías responder esta pregunta: ¿qué día empezamos a ser novios?",
       "foto": "recuerdos/fotos/dia6.jpg",
       "tieneDulce": true,
-      "notaFisica": "Un sabor es un recuerdo en miniatura."
+      "notaFisica": "Hay un detalle físico, pero tienes que responder antes."
     },
     {
       "dia": 7,
-      "titulo": "El primer regalo",
-      "objetoFisico": "Listón o cinta de regalo",
-      "descripcion": "El lazo del primer presente que nos dimos. Un detalle que lo decía todo.",
+      "titulo": "La promesa",
+      "objetoFisico": "¿Recuerdas ese día?",
+      "descripcion": "El día que decidí regalarte ese anillo supe en mi corazón que algún día serías mi prometida…",
       "foto": "recuerdos/fotos/dia7.jpg",
       "tieneDulce": false,
-      "notaFisica": "Guarda el listón como marca-páginas."
+      "notaFisica": "¿Aún tienes el anillo?"
     },
     {
       "dia": 8,
-      "titulo": "La llave del hogar",
-      "objetoFisico": "Llave antigua o copia de llave",
-      "descripcion": "La casa donde empezamos a construir algo juntos.",
+      "titulo": "Una nueva casa",
+      "objetoFisico": "Marcella y su caloooooor",
+      "descripcion": "La casa donde empezamos a construir algo juntos de verdad; ahí fue donde aprendimos a convivir.",
       "foto": "recuerdos/fotos/dia8.jpg",
       "tieneDulce": false,
       "notaFisica": "Cada llave abre una puerta a una memoria."
@@ -83,7 +83,7 @@ window.datosCalendario = {
       "dia": 9,
       "titulo": "La receta de la abuela",
       "objetoFisico": "Receta escrita a mano",
-      "descripcion": "El plato que cocinamos juntos, con letra de puño y letra de corazón.",
+      "descripcion": "El plato que cocinamos juntos, escrito de puño y letra y con el corazón.",
       "foto": "recuerdos/fotos/dia9.jpg",
       "tieneDulce": false,
       "notaFisica": "Cocinar juntos es recordar cada día."
@@ -110,7 +110,7 @@ window.datosCalendario = {
       "dia": 12,
       "titulo": "El botón de la chaqueta",
       "objetoFisico": "Botón de una prenda especial",
-      "descripcion": "Esa chaqueta o suéter que usabas y que todavía oigo cuando te acerques.",
+      "descripcion": "Esa chaqueta o suéter que usabas y que todavía recuerdo cada vez que te acercas.",
       "foto": "recuerdos/fotos/dia12.jpg",
       "tieneDulce": false,
       "notaFisica": "Los botones pequeños sostienen cosas grandes."
@@ -135,9 +135,9 @@ window.datosCalendario = {
     },
     {
       "dia": 15,
-      "titulo": "Pulsera de amistad",
+      "titulo": "Pulsera de la amistad",
       "objetoFisico": "Pulsera o hilo de la amistad",
-      "descripcion": "Nuestro lazo especial, atado con nudo de promesa.",
+      "descripcion": "Nuestro lazo especial, atado con un nudo de promesa.",
       "foto": "recuerdos/fotos/dia15.jpg",
       "tieneDulce": false,
       "notaFisica": "Úsala en la muñeca o tenla cerca."
@@ -146,7 +146,7 @@ window.datosCalendario = {
       "dia": 16,
       "titulo": "La función que no nos perdimos",
       "objetoFisico": "Boleto de cine, teatro o concierto",
-      "descripcion": "Esa noche donde el espectáculo fue solo un pretexto para estar juntos.",
+      "descripcion": "Esa noche en la que el espectáculo fue solo un pretexto para estar juntos.",
       "foto": "recuerdos/fotos/dia16.jpg",
       "tieneDulce": false,
       "notaFisica": "Boletos de entrada, memorias de salida."
@@ -181,7 +181,7 @@ window.datosCalendario = {
     {
       "dia": 20,
       "titulo": "Nuestra canción",
-      "objetoFisico": "Cinta de cassette o USB con una canción",
+      "objetoFisico": "Cassette o USB con una canción",
       "descripcion": "Esa pieza musical que suena cada vez que pienso en ti.",
       "foto": "recuerdos/fotos/dia20.jpg",
       "tieneDulce": false,
@@ -272,7 +272,7 @@ window.datosCalendario = {
       "dia": 30,
       "titulo": "Foto de hoy",
       "objetoFisico": "Foto impresa o selfie",
-      "descripcion": "El día en que abres esta caja. Un instante congelado.",
+      "descripcion": "El día en que abres esta caja: un instante congelado.",
       "foto": "recuerdos/fotos/dia30.jpg",
       "tieneDulce": false,
       "notaFisica": "Mírate y sonríe."
@@ -280,7 +280,7 @@ window.datosCalendario = {
     {
       "dia": 31,
       "titulo": "Cierre con promesa",
-      "objetoFisico": "Sobre con anillo/lazo simbólico + mensaje final",
+      "objetoFisico": "Sobre con anillo o lazo simbólico + mensaje final",
       "descripcion": "Cerramos el año con un lazo y la promesa de más recuerdos juntos.",
       "foto": "recuerdos/fotos/dia31.jpg",
       "tieneDulce": false,

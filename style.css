@@ -1195,7 +1195,7 @@ textarea.input-edit {
   .carrusel { margin-bottom: 32px; }
   .carrusel-barra { margin: 10px auto 0; }
   .dia-indicador-num { font-size: 1.35rem; }
-  .luces span:nth-child(n+13) { display: none; }
+  .luces { left: -16px; right: -16px; }
 
   .riel {
     gap: 14px;
@@ -1211,32 +1211,46 @@ textarea.input-edit {
   .abiertas-riel { gap: 9px; }
   .mini-caja { flex-basis: 54px; width: 54px; height: 54px; }
 
-  /* Modal como hoja inferior */
-  .modal-fondo { padding: 0; align-items: flex-end; }
-  .modal {
-    max-height: 92vh;
-    padding: 30px 18px calc(24px + env(safe-area-inset-bottom));
-    border-radius: 22px 22px 0 0;
-    border-bottom: 0;
-    animation: subirModal 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+  /* Recuerdo a pantalla completa para ver la foto sin recortes */
+  .modal-fondo {
+    padding: 0;
+    align-items: stretch;
+    justify-content: stretch;
   }
-  @keyframes subirModal {
-    from { opacity: 0; transform: translateY(48px); }
-    to   { opacity: 1; transform: translateY(0); }
+  .modal {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    max-height: none;
+    padding: max(54px, calc(env(safe-area-inset-top) + 48px)) 18px calc(24px + env(safe-area-inset-bottom));
+    border: 0;
+    border-radius: 0;
+    animation: aparecerModal 0.35s ease-out;
   }
   .modal-agarre {
     display: block;
     position: absolute;
-    top: 8px;
+    top: max(8px, calc(env(safe-area-inset-top) + 4px));
     left: 50%;
     transform: translateX(-50%);
     width: 42px; height: 4px;
     border-radius: 99px;
     background: rgba(240, 143, 180, 0.28);
   }
-  .cerrar-modal { top: 16px; right: 14px; width: 38px; height: 38px; }
+  .cerrar-modal {
+    top: max(16px, calc(env(safe-area-inset-top) + 10px));
+    right: max(14px, env(safe-area-inset-right));
+    width: 42px;
+    height: 42px;
+  }
   .contenido-modal { gap: 18px; }
-  .imagen-recuerdo,
+  .imagen-recuerdo {
+    width: 100%;
+    height: auto;
+    max-height: min(52dvh, 480px);
+    object-fit: contain;
+    transform: none;
+  }
   .placeholder-imagen { height: 220px; }
   .sello-cera { top: -10px; left: 14px; width: 40px; height: 40px; }
   .descripcion-modal { font-size: 0.97rem; }

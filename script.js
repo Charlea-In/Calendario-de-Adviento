@@ -35,6 +35,7 @@ const puedeTilt = window.matchMedia('(hover: hover) and (pointer: fine)').matche
 if (reducido) document.body.classList.add('sin-3d');
 
 const modoPreview = new URLSearchParams(location.search).has('preview');
+const CLAVE_ABIERTAS = 'adviento_abiertas_v2';
 
 const LOCK_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>';
 const GIFT_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="9" width="16" height="11" rx="1.6"></rect><path d="M3 9h18M12 9v11M12 9S9.6 4.2 7.2 4.2a2.4 2.4 0 0 0 0 4.8M12 9s2.4-4.8 4.8-4.8a2.4 2.4 0 0 1 0 4.8"></path></svg>';
@@ -110,10 +111,13 @@ function textoCuentaLargo(ms) {
 }
 
 let abiertas = [];
-try {
-  const guardadas = JSON.parse(localStorage.getItem('adviento_abiertas') || '[]');
-  abiertas = guardadas.filter((d) => recuerdos.some((r) => r.dia === d));
-} catch (e) { abiertas = []; }
+// La vista previa empieza limpia y nunca escribe sobre el progreso real.
+if (!modoPreview) {
+  try {
+    const guardadas = JSON.parse(localStorage.getItem(CLAVE_ABIERTAS) || '[]');
+    abiertas = guardadas.filter((d) => recuerdos.some((r) => r.dia === d));
+  } catch (e) { abiertas = []; }
+}
 
 function diaDeHoy() {
   const ahora = new Date();
@@ -341,7 +345,8 @@ calendarioEl.addEventListener('keydown', (e) => {
 let ultimoFoco = null;
 
 function guardarAbiertas() {
-  try { localStorage.setItem('adviento_abiertas', JSON.stringify(abiertas)); } catch (e) {}
+  if (modoPreview) return;
+  try { localStorage.setItem(CLAVE_ABIERTAS, JSON.stringify(abiertas)); } catch (e) {}
 }
 
 function marcarAbierta(cajaEl, rec) {

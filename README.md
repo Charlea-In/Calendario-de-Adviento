@@ -27,7 +27,7 @@ Calendario de Adviento/
 
 1. Abre `index.html` en tu navegador.
 2. Desliza el carrusel (o usa las flechas y el teclado) para recorrer los 31 días.
-3. Para desbloquear las 31 cajitas antes de diciembre, abre `index.html?preview`.
+3. Para probar las 31 cajitas antes de diciembre, abre `index.html?preview`. En GitHub Pages usa [la vista previa](https://charlea-in.github.io/Calendario-de-Adviento/?preview); no cambia el progreso del calendario real.
 4. El panel de administración se abre directamente en `admin.html` (no está enlazado desde la página pública).
 
 ---
@@ -112,5 +112,5 @@ Cada recuerdo tiene estos campos:
 
 - **Sorpresa total:** las cajitas solo muestran el número y cuánto falta para su día; el objeto y la historia aparecen al abrir.
 - **Progreso y repisa:** las cajitas abiertas se guardan en el navegador de cada persona y se pueden reabrir desde la sección inferior.
-- **Vista previa:** `index.html?preview` desbloquea todo para revisar el contenido.
+- **Vista previa:** `index.html?preview` desbloquea todo para revisar el contenido y mantiene su estado separado del progreso real.
 - **Modo nocturno:** el sitio usa siempre el tema oscuro rosado.

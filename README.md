@@ -2,8 +2,10 @@
 
 Página web para acompañar un calendario de adviento físico con **31 cajitas** y recuerdos del pasado. Cada día de diciembre se abre una cajita y se revela un objeto, una historia y (a veces) un detalle dulce.
 
-- Diseño **solo en modo nocturno**, con acentos **rosados y dorados**.
-- Las cajitas muestran **solo el número**: todo es sorpresa hasta abrirlas.
+- Diseño **solo en modo nocturno**, con acentos **rosados, dorados y verde pino**.
+- **Carrusel horizontal** pensado para celular, con cajitas de regalo en 3D.
+- Cada cajita muestra **solo el número y la cuenta atrás**: todo es sorpresa hasta su día.
+- Los recuerdos ya abiertos quedan guardados en una repisa para volver a verlos.
 - Hecho por Charlie con mucho amor ❤️
 
 ## Estructura del proyecto
@@ -12,20 +14,21 @@ Página web para acompañar un calendario de adviento físico con **31 cajitas**
 Calendario de Adviento/
 ├── index.html          # Página pública del calendario
 ├── datos.js            # ⭐ Los 31 recuerdos (lo único que se edita)
-├── style.css           # Estilos (tema nocturno rosado)
-├── script.js           # Lógica del calendario
+├── style.css           # Estilos (tema nocturno, cajitas 3D y carrusel)
+├── script.js           # Lógica del calendario, cuenta atrás y repisa
 ├── admin.html          # Panel de administración (sin enlace público)
 ├── admin.js            # Lógica del panel
 ├── recuerdos/
-│   └── fotos/          # Fotos: dia1.jpg, dia2.jpg, ...
+│   └── fotos/          # Fotos: dia1.jpg, dia2.jpg, ... y dia30.mp4
 └── README.md
 ```
 
 ## Ver el calendario en tu computadora
 
 1. Abre `index.html` en tu navegador.
-2. Para desbloquear las 31 cajitas antes de diciembre, abre `index.html?preview`.
-3. El panel de administración se abre directamente en `admin.html` (no está enlazado desde la página pública).
+2. Desliza el carrusel (o usa las flechas y el teclado) para recorrer los 31 días.
+3. Para desbloquear las 31 cajitas antes de diciembre, abre `index.html?preview`.
+4. El panel de administración se abre directamente en `admin.html` (no está enlazado desde la página pública).
 
 ---
 
@@ -99,14 +102,15 @@ Cada recuerdo tiene estos campos:
 
 1. Guarda tus fotos en `recuerdos/fotos/` con el nombre del día: `dia1.jpg`, `dia2.jpg`, …, `dia31.jpg`.
 2. En `datos.js` (o en el panel), el campo `foto` debe apuntar a esa ruta.
-3. Si una foto no existe, se muestra un marco con el texto “La foto del objeto físico va aquí”.
-4. Haz `commit` y `push` para publicarlas.
+3. El día 30 usa `recuerdos/fotos/dia30.mp4`; se reproduce en bucle, sin sonido y sin controles.
+4. Si una foto no existe, se muestra un marco con el texto “La foto del objeto físico va aquí”.
+5. Haz `commit` y `push` para publicarlas.
 
 ---
 
 ## Notas
 
-- **Sorpresa total:** las cajitas solo muestran el número; el objeto y la historia aparecen al abrir.
-- **Progreso:** cuántas cajitas se han abierto se guarda en el navegador de cada persona.
+- **Sorpresa total:** las cajitas solo muestran el número y cuánto falta para su día; el objeto y la historia aparecen al abrir.
+- **Progreso y repisa:** las cajitas abiertas se guardan en el navegador de cada persona y se pueden reabrir desde la sección inferior.
 - **Vista previa:** `index.html?preview` desbloquea todo para revisar el contenido.
 - **Modo nocturno:** el sitio usa siempre el tema oscuro rosado.

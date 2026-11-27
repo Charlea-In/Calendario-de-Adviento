@@ -2,14 +2,14 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#150E13">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#100A12">
   <meta name="description" content="Calendario de adviento de 31 días con recuerdos: abre una cajita cada día de diciembre y descubre el objeto y la historia que hay detrás.">
   <title>31 días, 31 recuerdos — Calendario de Adviento</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="style.css?v=12">
 </head>
 <body>
 
@@ -17,14 +17,20 @@
 
   <main class="contenedor">
     <header class="header">
-      <div class="adorno" aria-hidden="true"><span></span><i></i><span></span></div>
+      <div class="adorno" aria-hidden="true">
+        <span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3v18M12 7l4-2M12 7 8 5M12 13l4-2M12 13l-4-2M12 19l4-2M12 19l-4-2"></path>
+        </svg>
+        <span></span>
+      </div>
 
-      <p class="kicker">Calendario de adviento, diciembre 2026</p>
+      <p class="kicker">Calendario de adviento · diciembre 2026</p>
       <h1>31 días, <em>31 recuerdos</em></h1>
-      <p class="subtitulo">Abre una cajita cada día. Dentro te espera un objeto, un instante y una historia que compartimos.</p>
+      <p class="subtitulo">Cada día de diciembre, una cajita con un pedacito de nuestra historia.</p>
 
       <div class="estado-fecha" id="estado-fecha" role="status" aria-live="polite">
-        Día <span id="dia-actual">--</span> de 31
+        Preparando diciembre…
       </div>
 
       <div class="progreso-wrap">
@@ -35,15 +41,47 @@
       </div>
     </header>
 
-    <div class="calendario-grid" id="calendario">
-      <!-- Las cajas se generan con JavaScript -->
-    </div>
+    <section class="carrusel" aria-label="Cajitas del calendario" aria-roledescription="carrusel">
+      <div class="luces" aria-hidden="true"></div>
+
+      <div class="carrusel-barra">
+        <button class="flecha" id="anterior" type="button" aria-label="Cajita anterior">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+        </button>
+
+        <p class="dia-indicador">
+          <span class="dia-indicador-num" id="dia-actual">1</span>
+          <span class="dia-indicador-txt">de 31</span>
+        </p>
+
+        <button class="flecha" id="siguiente" type="button" aria-label="Cajita siguiente">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg>
+        </button>
+      </div>
+
+      <div class="riel" id="calendario" tabindex="0" aria-label="Desliza para recorrer los días"></div>
+
+      <div class="pista" id="pista" aria-hidden="true"></div>
+      <p class="pista-texto" id="pista-texto">Desliza para recorrer los 31 días</p>
+    </section>
+
+    <section class="abiertas" id="seccion-abiertas" aria-labelledby="titulo-abiertas">
+      <div class="abiertas-cabecera">
+        <h2 id="titulo-abiertas">Cajitas abiertas</h2>
+        <span class="abiertas-cuenta" id="abiertas-cuenta">0 / 31</span>
+      </div>
+      <p class="abiertas-ayuda" id="abiertas-ayuda">Se irán guardando aquí, en orden, para volver a verlas cuando quieras.</p>
+      <div class="abiertas-riel" id="abiertas"></div>
+    </section>
   </main>
 
   <!-- Modal de recuerdo abierto -->
   <div class="modal-fondo" id="modal-fondo" role="dialog" aria-modal="true" aria-labelledby="titulo-modal">
-    <div class="modal">
-      <button class="cerrar-modal" id="cerrar-modal" type="button" aria-label="Cerrar recuerdo">×</button>
+    <div class="modal" id="modal">
+      <span class="modal-agarre" aria-hidden="true"></span>
+      <button class="cerrar-modal" id="cerrar-modal" type="button" aria-label="Cerrar recuerdo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+      </button>
       <div class="contenido-modal" id="contenido-modal">
         <!-- Se inyecta con JS -->
       </div>
@@ -54,7 +92,7 @@
     <p>Hecho por Charlie con mucho amor <span class="corazon">❤️</span></p>
   </footer>
 
-  <script src="datos.js?v=8"></script>
-  <script src="script.js?v=8"></script>
+  <script src="datos.js?v=12"></script>
+  <script src="script.js?v=12"></script>
 </body>
 </html>

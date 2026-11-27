@@ -81,210 +81,210 @@ window.datosCalendario = {
     },
     {
       "dia": 9,
-      "titulo": "La receta de la abuela",
-      "objetoFisico": "Receta escrita a mano",
-      "descripcion": "El plato que cocinamos juntos, escrito de puño y letra y con el corazón.",
+      "titulo": "Nuestra primera Navidad",
+      "objetoFisico": "",
+      "descripcion": "Recuerdo nuestra primera Navidad, cuando vine por primera vez a tu casa, conocí y hablé con mi suegra y pude compartir esas fechas tan especiales con ustedes.",
       "foto": "recuerdos/fotos/dia9.jpg",
       "tieneDulce": false,
-      "notaFisica": "Cocinar juntos es recordar cada día."
+      "notaFisica": ""
     },
     {
       "dia": 10,
-      "titulo": "Sobremesa familiar",
-      "objetoFisico": "Foto impresa de una comida familiar",
-      "descripcion": "Aquella tarde larga entre risas, platos vacíos y buenos juegos.",
+      "titulo": "Nuestros deseos 11:11",
+      "objetoFisico": "11:11 para el espejo",
+      "descripcion": "¿Te acuerdas del 11:11? De todas las cosas que soñamos y quisimos, me encanta pensar en cuántas estamos cumpliendo juntos.",
       "foto": "recuerdos/fotos/dia10.jpg",
       "tieneDulce": false,
-      "notaFisica": "La mejor comida es la que se comparte."
+      "notaFisica": "Ojalá sigamos convirtiendo deseos en recuerdos."
     },
     {
       "dia": 11,
-      "titulo": "Nuestro compañero peludo",
-      "objetoFisico": "Foto de una mascota",
-      "descripcion": "Ese amigo de cuatro patas que ha estado en nuestros recuerdos.",
+      "titulo": "Nuestro primer viaje",
+      "objetoFisico": "",
+      "descripcion": "Nuestro primer viaje de vacaciones juntos fue por la Ruta de las Flores. Disfrutamos muchísimo y descubrimos nuestro café favorito de la zona: Entre Nubes.",
       "foto": "recuerdos/fotos/dia11.jpg",
       "tieneDulce": false,
-      "notaFisica": "Las huellas también se guardan en el corazón."
+      "notaFisica": "Hay lugares que se vuelven especiales por compartirlos."
     },
     {
       "dia": 12,
-      "titulo": "El botón de la chaqueta",
-      "objetoFisico": "Botón de una prenda especial",
-      "descripcion": "Esa chaqueta o suéter que usabas y que todavía recuerdo cada vez que te acercas.",
+      "titulo": "París y nuestro compromiso",
+      "objetoFisico": "",
+      "descripcion": "La vida nos ha llevado a tantos lugares juntos que ni siquiera me lo creo. Estar en París aquella noche, comprometidos, ha sido una de las mejores experiencias de mi vida.",
       "foto": "recuerdos/fotos/dia12.jpg",
-      "tieneDulce": false,
-      "notaFisica": "Los botones pequeños sostienen cosas grandes."
+      "tieneDulce": true,
+      "notaFisica": ""
     },
     {
       "dia": 13,
-      "titulo": "La moneda del año",
-      "objetoFisico": "Moneda de un año importante",
-      "descripcion": "El año en que todo cambió para nosotros.",
+      "titulo": "Septiembre es tuyo",
+      "objetoFisico": "Mini cake",
+      "descripcion": "Septiembre siempre será especial porque es el mes en que naciste. Tu cumpleaños convierte ese mes en el mejor de todos y, cada septiembre, me recuerda lo afortunado que soy de tenerte.",
       "foto": "recuerdos/fotos/dia13.jpg",
-      "tieneDulce": false,
-      "notaFisica": "Guárdala en el bolsillo de tu abrigo."
+      "tieneDulce": true,
+      "notaFisica": ""
     },
     {
       "dia": 14,
-      "titulo": "Vale para una cena futura",
-      "objetoFisico": "Vale escrito a mano",
-      "descripcion": "Te invito a cenar cuando quieras. Sin fecha de caducidad.",
+      "titulo": "Éramos y seguimos siendo",
+      "objetoFisico": "",
+      "descripcion": "Un pequeño TBT a cuando éramos más jóvenes, pero ya estábamos enamorados. Me encanta mirar atrás y darme cuenta de que seguimos queriéndonos con la misma ilusión.",
       "foto": "recuerdos/fotos/dia14.jpg",
       "tieneDulce": false,
-      "notaFisica": "Este vale no caduca nunca."
+      "notaFisica": ""
     },
     {
       "dia": 15,
-      "titulo": "Pulsera de la amistad",
-      "objetoFisico": "Pulsera o hilo de la amistad",
-      "descripcion": "Nuestro lazo especial, atado con un nudo de promesa.",
+      "titulo": "El sueño de ser esposos",
+      "objetoFisico": "",
+      "descripcion": "Después de cuatro años juntos, dar el paso hacia ser esposos es uno de esos sueños que no sabía que tenía hasta que te conocí. Nuestra pedida en Barcelona siempre será especial.",
       "foto": "recuerdos/fotos/dia15.jpg",
       "tieneDulce": false,
-      "notaFisica": "Úsala en la muñeca o tenla cerca."
+      "notaFisica": "Barcelona fue el lugar donde dijimos sí a nuestro futuro."
     },
     {
       "dia": 16,
-      "titulo": "La función que no nos perdimos",
-      "objetoFisico": "Boleto de cine, teatro o concierto",
-      "descripcion": "Esa noche en la que el espectáculo fue solo un pretexto para estar juntos.",
+      "titulo": "A toda velocidad",
+      "objetoFisico": "",
+      "descripcion": "Uno de los días más divertidos que hemos vivido fue cuando fuimos a Huayúa y nos subimos a las cuadrimotos. Lo disfrutamos muchísimo y guardo ese día entre mis recuerdos más lindos contigo.",
       "foto": "recuerdos/fotos/dia16.jpg",
       "tieneDulce": false,
-      "notaFisica": "Boletos de entrada, memorias de salida."
+      "notaFisica": ""
     },
     {
       "dia": 17,
-      "titulo": "Foto con los amigos",
-      "objetoFisico": "Foto grupal impresa",
-      "descripcion": "Las personas que nos rodean y que forman parte de nuestra historia.",
+      "titulo": "Nuestro jueves de recuerdos",
+      "objetoFisico": "",
+      "descripcion": "Un Throwback Thursday a nuestros momentos en la playa. Me encanta la playa, aunque a ti no tanto, pero nuestros atardeceres siempre terminan siendo el momento favorito, cuando el calor se va y estamos juntos.",
       "foto": "recuerdos/fotos/dia17.jpg",
       "tieneDulce": false,
-      "notaFisica": "Los amigos son la familia que elegimos."
+      "notaFisica": ""
     },
     {
       "dia": 18,
-      "titulo": "Sabor de infancia",
-      "objetoFisico": "Dulce o golosina de la infancia",
-      "descripcion": "El sabor de cuando éramos pequeños, compartido ahora.",
+      "titulo": "Dios en nuestro camino",
+      "objetoFisico": "",
+      "descripcion": "«Mejores son dos que uno... porque si caen, el uno levantará a su compañero... y cordón de tres dobleces no se rompe pronto». Eclesiastés 4:9-12 (RVR1960).",
       "foto": "recuerdos/fotos/dia18.jpg",
-      "tieneDulce": true,
-      "notaFisica": "Algunos sabores no tienen edad."
+      "tieneDulce": false,
+      "notaFisica": "Que Dios siga siendo el tercer hilo de nuestra cuerda."
     },
     {
       "dia": 19,
-      "titulo": "Escapada de fin de semana",
-      "objetoFisico": "Tarjeta postal de un viaje corto",
-      "descripcion": "Dos días fuera de la rutina, caminatas y conversaciones lentas.",
+      "titulo": "Gracias por ayudarme",
+      "objetoFisico": "",
+      "descripcion": "Gracias a ti he superado miedos y logrado cosas que nunca imaginé, como volar por primera vez. Has estado conmigo en las buenas y en las malas, ayudándome a crecer y a mejorar mi vida.",
       "foto": "recuerdos/fotos/dia19.jpg",
       "tieneDulce": false,
-      "notaFisica": "Las postales viajan más que las palabras."
+      "notaFisica": ""
     },
     {
       "dia": 20,
-      "titulo": "Nuestra canción",
-      "objetoFisico": "Cassette o USB con una canción",
-      "descripcion": "Esa pieza musical que suena cada vez que pienso en ti.",
+      "titulo": "Un café contigo",
+      "objetoFisico": "Invitación a tomar café",
+      "descripcion": "No necesito una ocasión especial para recordarte cuánto te amo. Hoy solo quiero compartir un café contigo, disfrutar de una tarde juntos y recordarte lo enamorado que estoy de ti.",
       "foto": "recuerdos/fotos/dia20.jpg",
-      "tieneDulce": false,
-      "notaFisica": "Dale play cuando quieras sentirme cerca."
+      "tieneDulce": true,
+      "notaFisica": ""
     },
     {
       "dia": 21,
-      "titulo": "Nuestro garabato",
-      "objetoFisico": "Dibujo o garabato infantil",
-      "descripcion": "Algo que dibujamos juntos, sin saber dibujar, con todo el corazón.",
+      "titulo": "Conociendo a tu familia",
+      "objetoFisico": "",
+      "descripcion": "Recuerdo tus quince años, cuando conocí a tu familia por primera vez. Aunque al principio no conocía a nadie, poco a poco empecé a sentirme parte de ustedes.",
       "foto": "recuerdos/fotos/dia21.jpg",
       "tieneDulce": false,
-      "notaFisica": "El arte imperfecto es el más honesto."
+      "notaFisica": ""
     },
     {
       "dia": 22,
-      "titulo": "Piedra de la playa",
-      "objetoFisico": "Piedra, concha o arena de un lugar",
-      "descripcion": "Ese paseo por la orilla, el agua y el viento en la cara.",
+      "titulo": "El día de la lancha",
+      "objetoFisico": "",
+      "descripcion": "Una de nuestras salidas con mi mamá. Si no me equivoco, esta fue la foto del día en que te caíste de la lancha. Lo siento, pero todavía me da risa recordarlo.",
       "foto": "recuerdos/fotos/dia22.jpg",
       "tieneDulce": false,
-      "notaFisica": "Sosténla en la mano y cierra los ojos."
+      "notaFisica": ""
     },
     {
       "dia": 23,
-      "titulo": "Imán de nevera",
-      "objetoFisico": "Imán o souvenir de un lugar",
-      "descripcion": "Un trocito de ese sitio que visitamos, pegado a nuestro hogar.",
+      "titulo": "Un lugar para soñar",
+      "objetoFisico": "",
+      "descripcion": "Después de regresar de Panamá, tuvimos una de las salidas más lindas a un lugar que imaginamos para casarnos. (Una boda al aire libre ahí sería hermosísima). Espero que nos casemos pronto.",
       "foto": "recuerdos/fotos/dia23.jpg",
       "tieneDulce": false,
-      "notaFisica": "Que nunca se caiga de la nevera."
+      "notaFisica": ""
     },
     {
       "dia": 24,
-      "titulo": "El viaje en tren",
-      "objetoFisico": "Pase de abordar o boleto de tren",
-      "descripcion": "Ventanas, paisajes pasando y silencio compartido.",
+      "titulo": "Nuestra quinta Navidad",
+      "objetoFisico": "",
+      "descripcion": "Feliz Navidad. Gracias por regalarme nuestra quinta Navidad juntos. Espero que tengamos muchísimas más; te amo mucho y quiero pasar mi vida contigo.",
       "foto": "recuerdos/fotos/dia24.jpg",
       "tieneDulce": false,
-      "notaFisica": "Los mejores viajes no tienen mapa."
+      "notaFisica": ""
     },
     {
       "dia": 25,
-      "titulo": "Paisaje de nuestra memoria",
-      "objetoFisico": "Foto de un paisaje o ciudad",
-      "descripcion": "Ese amanecer o atardecer que vimos juntos y nunca olvidamos.",
+      "titulo": "Un futuro en París",
+      "objetoFisico": "",
+      "descripcion": "Espero que algún día pasemos un 25 de diciembre en París. Nunca dudes de ti: eres hermosa, inteligente y capaz de lograr todo lo que te propongas.",
       "foto": "recuerdos/fotos/dia25.jpg",
       "tieneDulce": false,
-      "notaFisica": "Mírala y respira hondo."
+      "notaFisica": "Nunca dejes de creer en ti."
     },
     {
       "dia": 26,
-      "titulo": "Semilla para el futuro",
-      "objetoFisico": "Semilla para plantar",
-      "descripcion": "Algo que crecerá con nosotros, día a día.",
+      "titulo": "Tu magia en Disney",
+      "objetoFisico": "Bolsita de M&M's",
+      "descripcion": "Nunca olvidaré nuestra visita a Disney París. Yo no soy un niño Disney, pero nunca te había visto tan emocionada al descubrir cada cosa. Verte así fue uno de mis momentos favoritos.",
       "foto": "recuerdos/fotos/dia26.jpg",
-      "tieneDulce": false,
-      "notaFisica": "Plántala y riega la memoria."
+      "tieneDulce": true,
+      "notaFisica": ""
     },
     {
       "dia": 27,
-      "titulo": "Mapa de nuestras calles",
-      "objetoFisico": "Mapa plegado de un lugar",
-      "descripcion": "Las avenidas y callejones que recorrimos sin prisa.",
+      "titulo": "Un deseo en Roma",
+      "objetoFisico": "",
+      "descripcion": "Frente a la Fontana di Trevi pedí, de verdad, una vida a tu lado. Llegamos a Roma comprometidos y deseo que la próxima vez volvamos como esposos.",
       "foto": "recuerdos/fotos/dia27.jpg",
       "tieneDulce": false,
-      "notaFisica": "Cada doblez es una esquina recordada."
+      "notaFisica": ""
     },
     {
       "dia": 28,
-      "titulo": "Nuestro rincón secreto",
-      "objetoFisico": "Post-it con coordenadas o un sitio",
-      "descripcion": "Ese lugar que solo nosotros conocemos y guardamos en silencio.",
+      "titulo": "Tu sonrisa me da paz",
+      "objetoFisico": "Secreto",
+      "descripcion": "Eres hermosa, inteligente y divertida, incluso cuando te enojas. Cada vez que te veo hacer esa pose de felicidad, me transmites una alegría y una paz que también llenan mi vida.",
       "foto": "recuerdos/fotos/dia28.jpg",
-      "tieneDulce": false,
-      "notaFisica": "Guarda este secreto entre los dos."
+      "tieneDulce": true,
+      "notaFisica": ""
     },
     {
       "dia": 29,
-      "titulo": "Carta para el año que viene",
-      "objetoFisico": "Carta escrita a mano",
-      "descripcion": "Palabras escritas hoy para leerse dentro de 365 días.",
+      "titulo": "Fotos que nos quedan",
+      "objetoFisico": "",
+      "descripcion": "Las fotos que nos hacemos en el carro son recuerdos que me quedan muy marcados. Quiero pedirte que hagamos más, porque serán parte de los recuerdos que nos llevaremos cuando nos vayamos a Europa.",
       "foto": "recuerdos/fotos/dia29.jpg",
       "tieneDulce": false,
-      "notaFisica": "Ábrela el próximo 1 de diciembre."
+      "notaFisica": "Hagamos más fotos juntos."
     },
     {
       "dia": 30,
-      "titulo": "Foto de hoy",
-      "objetoFisico": "Foto impresa o selfie",
-      "descripcion": "El día en que abres esta caja: un instante congelado.",
+      "titulo": "Nuestro concierto inolvidable",
+      "objetoFisico": "Foto impresa",
+      "descripcion": "El concierto de Bad Bunny fue uno de los mejores momentos que hemos vivido como pareja y como personas. Ese día sentimos que estábamos cumpliendo metas y disfrutando de algo que soñamos.",
       "foto": "recuerdos/fotos/dia30.jpg",
-      "tieneDulce": false,
-      "notaFisica": "Mírate y sonríe."
+      "tieneDulce": true,
+      "notaFisica": ""
     },
     {
       "dia": 31,
-      "titulo": "Cierre con promesa",
-      "objetoFisico": "Sobre con anillo o lazo simbólico + mensaje final",
-      "descripcion": "Cerramos el año con un lazo y la promesa de más recuerdos juntos.",
+      "titulo": "Nuestro futuro en Barcelona",
+      "objetoFisico": "",
+      "descripcion": "Este año nos comprometimos, cumplimos cuatro años juntos y tomamos decisiones que cambiarán nuestra vida. La Sagrada Familia representa nuestra unión, nuestro amor y ese futuro que soñamos construir en Barcelona.",
       "foto": "recuerdos/fotos/dia31.jpg",
       "tieneDulce": false,
-      "notaFisica": "Hasta el próximo diciembre."
+      "notaFisica": "Que nuestra familia siempre permanezca unida."
     }
   ]
 };

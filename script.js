@@ -191,7 +191,7 @@ function abrirModal(recuerdo) {
     <div class="texto-modal">
       <span class="dia-badge">Día ${recuerdo.dia} de ${totalDias}</span>
       <h2 class="titulo-modal" id="titulo-modal">${recuerdo.titulo}</h2>
-      <div class="objeto-modal">${recuerdo.objetoFisico}</div>
+      ${recuerdo.objetoFisico ? `<div class="objeto-modal">${recuerdo.objetoFisico}</div>` : ''}
       <p class="descripcion-modal">${recuerdo.descripcion}</p>
       ${recuerdo.tieneDulce ? '<span class="dulce-badge"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="6" width="16" height="12" rx="2"></rect><path d="M4 10h16M4 14h16M10 6v12M14 6v12"></path></svg>Contiene un detalle dulce</span>' : ''}
       ${recuerdo.notaFisica ? `<p class="nota-fisica-modal">${recuerdo.notaFisica}</p>` : ''}

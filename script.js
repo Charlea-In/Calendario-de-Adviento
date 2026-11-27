@@ -181,11 +181,17 @@ function abrirDia(recuerdo, cajaEl) {
 
 function abrirModal(recuerdo) {
   const fotoSrc = recuerdo.foto || '';
+  const esVideo = /\.(mp4|webm|ogv|m4v|mov)$/i.test(fotoSrc);
+  const medio = esVideo
+    ? `<video src="${fotoSrc}" class="imagen-recuerdo" autoplay muted loop playsinline preload="metadata"
+             aria-label="Recuerdo del día ${recuerdo.dia}"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>`
+    : `<img src="${fotoSrc}" alt="Recuerdo del día ${recuerdo.dia}" class="imagen-recuerdo"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">`;
   contenidoModal.innerHTML = `
     <div class="sello-cera" aria-hidden="true">${recuerdo.dia}</div>
     <div class="marco-foto">
-      <img src="${fotoSrc}" alt="Recuerdo del día ${recuerdo.dia}" class="imagen-recuerdo"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      ${medio}
       <div class="placeholder-imagen">La foto del objeto físico<br>va aquí</div>
     </div>
     <div class="texto-modal">

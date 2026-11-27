@@ -273,7 +273,7 @@ window.datosCalendario = {
       "titulo": "Nuestro concierto inolvidable",
       "objetoFisico": "Foto impresa",
       "descripcion": "El concierto de Bad Bunny fue uno de los mejores momentos que hemos vivido como pareja y como personas. Ese día sentimos que estábamos cumpliendo metas y disfrutando de algo que soñamos.",
-      "foto": "recuerdos/fotos/dia30.jpg",
+      "foto": "recuerdos/fotos/dia30.mp4",
       "tieneDulce": true,
       "notaFisica": ""
     },
